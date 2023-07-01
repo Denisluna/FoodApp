@@ -19,7 +19,9 @@ function Popular() {
             {
                 popularRecipes ? (
                     popularRecipes.map(recipe => (
-                        <p>{recipe.title}</p>
+                        <div key={recipe.id}>
+                            <p>{recipe.title}</p>
+                        </div>
                     ))
                 ) : (
                     <p>Loading...</p>
