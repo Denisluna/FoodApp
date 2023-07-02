@@ -1,4 +1,5 @@
 import PageDisplay from "./pages/PageDisplay";
+import './index.css'
 
 function App() {
   return (

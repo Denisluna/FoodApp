@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { Card, CardGradient, Wrapper } from "../styled-components/styledComponents";
+import '@splidejs/react-splide/css';
 
 function Popular() {
 
