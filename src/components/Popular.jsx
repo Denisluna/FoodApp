@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import { styled } from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { Card, CardGradient, Wrapper } from "../styled-components/styledComponents";
-import '@splidejs/react-splide/css';
 
 function Popular() {
 
@@ -40,6 +38,7 @@ function Popular() {
                         perPage: 3,
                         gap: "1.10rem",
                         padding: "2rem",
+                        start: 0,
                         pagination: false
                     }}>
                         {
