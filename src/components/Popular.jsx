@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Card, CardGradient, Wrapper } from "../styled-components/styledComponents";
 import '@splidejs/react-splide/css';
 
 function Popular() {
@@ -11,7 +12,7 @@ function Popular() {
         getPopularRecipes();
     }, []);
 
-    const getPopularRecipes = async () => {
+    const getPopularRecipes = () => {
 
         const storedRecipes = localStorage.getItem('popularRecipes');
 
@@ -21,7 +22,7 @@ function Popular() {
             return;
         }
 
-        fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`)
+        fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=8`)
             .then(response => response.json())
             .then(response => {
                 setPopularRecipes(response.recipes);
@@ -36,8 +37,8 @@ function Popular() {
                 popularRecipes ? (
                     <Splide options={{
                         type: 'loop',
-                        perPage: 4,
-                        gap: "1rem",
+                        perPage: 3,
+                        gap: "1.10rem",
                         padding: "2rem",
                         pagination: false
                     }}>
@@ -60,42 +61,5 @@ function Popular() {
         </Wrapper>
     )
 }
-const Wrapper = styled.div`
-    margin: 4rem 0;
-`
-const Card = styled.div`
-    margin: 0 1rem;
-    min-height: 25rem;
-    border-radius: 2rem;
-    overflow: hidden;
-    position: relative;
 
-    p{
-        position: absolute;
-        bottom: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
-        color: white;
-        font-size: 1rem;
-        text-align: center;
-        font-weight: 900;
-        z-index: 10;
-    }
-
-    img {
-        border-radius: 2rem;
-        position: absolute;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
-`
-const CardGradient = styled.div`
-    z-index: 3;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
-`
 export default Popular
