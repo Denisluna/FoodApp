@@ -39,3 +39,22 @@ export const CardGradient = styled.div`
     width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
 `
+
+export const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 1rem;
+`
+export const GridCard = styled.div`
+    text-align: center;
+    
+    img{
+        width: 100%;
+        border-radius: 2rem;
+    }
+
+    a{
+        text-decoration: none;
+    }
+    
+`

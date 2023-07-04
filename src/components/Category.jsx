@@ -42,7 +42,7 @@ const SLink = styled(NavLink)`
     border-radius: 50%;
     height: 5rem;
     width: 5rem;
-    background: linear-gradient(35deg, #34495e, #2c3e50);
+    background: linear-gradient(35deg, #494949, #313131);
 
     h4{
         color: white;
