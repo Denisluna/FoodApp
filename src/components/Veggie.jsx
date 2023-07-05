@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import { Card, CardGradient, Wrapper } from "../styled-components/styledComponents";
+import { Link } from "react-router-dom";
 import '@splidejs/react-splide/css';
 
 function Veggie() {
@@ -40,17 +41,19 @@ function Veggie() {
             perPage: 4,
             gap: "1.10rem",
             padding: "2rem",
-            start: 0,
+            start: -1,
             pagination: false
           }}>
             {
               veggieRecipes.map(recipe => (
                 <SplideSlide key={recipe.id}>
-                  <Card>
-                    <p>{recipe.title}</p>
-                    <img src={recipe.image} alt={recipe.title} />
-                    <CardGradient />
-                  </Card>
+                  <Link to={`/recipe/${recipe.id}`}>
+                    <Card>
+                      <p>{recipe.title}</p>
+                      <img src={recipe.image} alt={recipe.title} />
+                      <CardGradient />
+                    </Card>
+                  </Link>
                 </SplideSlide>
               ))
             }

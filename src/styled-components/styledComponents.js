@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import { styled } from "styled-components";
 
 export const Wrapper = styled.div`
-margin: 4rem 0;
+    margin: 4rem 0;
 `
 
 export const Card = styled.div`
@@ -40,7 +41,7 @@ export const CardGradient = styled.div`
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
 `
 
-export const Grid = styled.div`
+export const Grid = styled(motion.div)`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-gap: 1rem;

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { Card, CardGradient, Wrapper } from "../styled-components/styledComponents";
 import '@splidejs/react-splide/css';
+import { Link } from "react-router-dom";
 
 function Popular() {
 
@@ -39,17 +40,19 @@ function Popular() {
                         perPage: 3,
                         gap: "1.10rem",
                         padding: "2rem",
-                        start: 0,
+                        start: -1,
                         pagination: false
                     }}>
                         {
                             popularRecipes.map(recipe => (
                                 <SplideSlide key={recipe.id}>
-                                    <Card>
-                                        <p>{recipe.title}</p>
-                                        <img src={recipe.image} alt={recipe.title} />
-                                        <CardGradient />
-                                    </Card>
+                                    <Link to={`/recipe/${recipe.id}`}>
+                                        <Card>
+                                            <p>{recipe.title}</p>
+                                            <img src={recipe.image} alt={recipe.title} />
+                                            <CardGradient />
+                                        </Card>
+                                    </Link>
                                 </SplideSlide>
                             ))
                         }
